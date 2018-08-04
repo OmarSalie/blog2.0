@@ -1,0 +1,25 @@
+    <div class="footer">
+        <div class="ui container">
+            Game-Tech 2018. All Rights Reserved
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        var images=['https://cdn.glitch.com/c4cb1df9-ace9-4269-ac75-36e0229b62b6%2F001.jpg?1532590645899',
+                    'https://cdn.glitch.com/c4cb1df9-ace9-4269-ac75-36e0229b62b6%2F002.jpg?1532590648007',
+                    'https://cdn.glitch.com/c4cb1df9-ace9-4269-ac75-36e0229b62b6%2F004.jpg?1532590648767',
+                    'https://cdn.glitch.com/c4cb1df9-ace9-4269-ac75-36e0229b62b6%2F005.jpg?1532590649676',
+                    'https://cdn.glitch.com/c4cb1df9-ace9-4269-ac75-36e0229b62b6%2F003.jpg?1532590657099',];
+
+        var randomNumber = Math.floor(Math.random() * images.length);
+        var bgImg = 'url(' + images[randomNumber] + ')';
+
+        $('body').css({'background-image':bgImg,});
+    });
+</script>   
+
+</body>
+
+</html>

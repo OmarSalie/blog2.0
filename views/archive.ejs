@@ -1,0 +1,80 @@
+<? include ./partials/header ?>
+            <a href="/" class="item">
+                <i class="home icon"></i>
+                Home
+            </a>
+            <a href="/blogs/archive" class="active item">
+                <i class="archive icon"></i>
+                Archive
+            </a>
+            <a href="/blogs/new" class="item" id="newpost">
+                <i class="plus square icon"></i>
+                New Post
+            </a>
+            <a href="/login" class="item">
+                <button class="ui primary button">Login</button>
+            </a>
+            <a href="/signup" class="item">
+                <button class="ui primary button">Sign Up</button>
+            </a>
+                
+            
+        </div>
+    </div>
+
+    <div class="ui main text container" id="content">
+
+        <div class="ui huge block header">
+            Archives
+        </div>
+
+        <div class="ui segment">
+            <div class="ui items">
+
+                <? blogs.forEach(function(blog) { ?>
+
+                    <? const postUrl = '/blogs/' + blog._id; ?>
+
+                        <div class="item">
+
+                            <div class="content">
+                                <ul>
+                                    <li class="header">
+                                        <a href="<?= postUrl ?>">
+                                            <?= blog.title ?>
+                                        </a>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+
+                        </div>
+                        <? }); ?>
+
+            </div>
+        </div>
+    </div>
+    <div class="subscribe">
+        <div class="ui main text container">
+            <div class="ui huge block header">
+                Subscribe
+            </div>
+            <form action="/subscriptions" method="POST" class="ui form">
+                <div class="field">
+                    <input type="text" name="subscription[name]" placeholder="Name" required>
+                </div>
+                <div class="field">
+                    <input type="text" name="subscription[surname]" placeholder="Surname" required>
+                </div>
+                <div class="field">
+                    <input type="email" name="subscription[email]" placeholder="Email" required>
+                </div>
+                <button class="ui black icon button">
+                    Submit
+                    <i class="send icon right"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <? include ./partials/footer ?>

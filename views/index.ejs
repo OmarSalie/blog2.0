@@ -1,0 +1,118 @@
+<? include ./partials/header ?>
+            <a href="/" class="active item">
+                <i class="home icon"></i>
+                Home
+            </a>
+            <a href="/blogs/archive" class="item">
+                <i class="archive icon"></i>
+                Archive
+            </a>
+            <a href="/blogs/new" class="item" id="newpost">
+                <i class="plus square icon"></i>
+                New Post
+            </a>
+
+            <a href="/login" class="item">
+                <button class="ui primary button">Login</button>
+            </a>
+            <a href="/signup" class="item">
+                <button class="ui primary button">Sign Up</button>
+            </a>
+                
+        </div>
+    </div>
+
+    <div class="fullscreenImg">
+        <div class="title">
+            <h1>Game-Tech</h1>
+            <p>For the latest in gaming and technology.</p>
+        </div>
+        <div class="getStarted">
+            <p>Want to contribute? Sign Up today, for free!</p>
+            <a href=""><div class="ui primary button">Sign In</div></a>
+        </div>
+        <div class="viewPosts">
+            <p>See latest posts</p>
+            <a href="#posts"><i class="angle down icon"></i></a>
+        </div>
+    </div>
+
+    <div class="posts-container">
+        <div class="postsHeader" id="posts">
+            <h2>Latest Posts</h2>
+        </div>
+        <div class="posts">
+            <? if(blogs != 0) { ?>
+
+                <? for(var i = 0; i < 5; i++) { ?>
+
+                    <? var postUrl = '/blogs/' + blogs[i]._id; ?>
+
+                    
+
+                    <div class="postImg">
+                        <a href="<?= postUrl ?>" class="image">
+                            <img src="<?= blogs[i].imageUrl ?>" href="#">
+                        </a>
+                        <div class="postDetails">
+                                <a href="<?= postUrl ?>">
+                                    <h2><?= blogs[i].title ?></h2>
+                                </a>
+                                <span>
+                                    <?= blogs[i].created.toDateString() ?>
+                                </span>
+                                <span>
+                                    Written by <?= blogs[i].author ?>
+                                </span>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="postContent">
+                        <p>
+                            <? if(blogs[i].body.length > 250) { ?>
+                                <?- blogs[i].body.substring(0,250) ?>...
+                                    <? } else { ?>
+                                        <?- blogs[i].body ?>
+                                            <? }; ?>
+                        </p>
+                        <div class="extra">
+                            <a class="ui small black icon button" href="<?= postUrl ?>">
+                                Read More
+                                <i class="right chevron icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                <? } ?>
+            <? } else { ?>
+
+            <h3>Site has no posts</h3>
+
+            <? } ?>
+        </div>
+    </div>
+    <div class="subscribe">
+        <div class="ui main text container">
+            <div class="ui huge block header">
+                Subscribe
+            </div>
+            <form action="/subscriptions" method="POST" class="ui form">
+                <div class="field">
+                    <input type="text" name="subscription[name]" placeholder="Name" required>
+                </div>
+                <div class="field">
+                    <input type="text" name="subscription[surname]" placeholder="Surname" required>
+                </div>
+                <div class="field">
+                    <input type="email" name="subscription[email]" placeholder="Email" required>
+                </div>
+                <button class="ui black icon button">
+                    Submit
+                    <i class="send icon right"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <? include ./partials/footer ?>

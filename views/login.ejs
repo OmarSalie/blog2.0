@@ -1,0 +1,56 @@
+<? include ./partials/header ?>
+        <a href="/" class="item">
+            <i class="home icon"></i>
+            Home
+        </a>
+        <a href="/blogs/archive" class="item">
+            <i class="archive icon"></i>
+            Archive
+        </a>
+        <a href="/blogs/new" class="item" id="newpost">
+            <i class="plus square icon"></i>
+            New Post
+        </a>
+
+        <a href="/login" class="item">
+            <button class="ui primary button">Login</button>
+        </a>
+        <a href="/signup" class="item">
+            <button class="ui primary button">Sign Up</button>
+        </a>
+            
+    </div>
+</div>
+
+    <div class="ui main text container segment">
+        <div class="ui huge header">
+            Login
+        </div>
+
+        <div class="ui form">
+
+            <div class="field">
+                <label>Username</label>
+                <input type="text" name="users[username]" placeholder="Username" required>
+            </div>
+            <div class="field">
+                <label>Password</label>
+                <input type="password" name="users[password]" placeholder="Password" required>
+            </div>
+            <button class="ui black icon button">
+                Submit
+                <i class="send icon right"></i>
+            </button>
+
+            <a href="/blogs" class="ui red basic icon button">
+                Cancel
+                <i class="remove icon right"></i>
+            </a>
+
+        </div>
+    </div>
+
+    <script>
+    </script>
+
+    <? include ./partials/footer ?>

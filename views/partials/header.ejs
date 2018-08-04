@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+
+    <!-- include summernote css/js -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+
+    <title>Game-Tech</title>
+
+    <!-- include semantic ui css/js -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.css">
+    <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="shortcut icon" href="https://cdn.glitch.com/c4cb1df9-ace9-4269-ac75-36e0229b62b6%2Ficon.png?1533302754641" type="image/x-icon">
+
+    <script>
+        document.cookie = "loggedin=false";
+
+        function login(name) {
+            document.cookie = "loggedin=true;username="+ name;
+        }
+
+        function checkUser() {
+            var ca = document.cookie.split(';');
+            
+            
+        }
+
+        function logout() {
+            document.cookie = "loggedin=false";
+        }
+    </script>
+</head>
+
+<body>
+<div class="main-container">
+    <div class="ui secondary pointing six item stackable menu" id="navbar">
+        <div class="ui container">
+            <div class="header item">
+                <a href="/"><img src="https://cdn.glitch.com/c4cb1df9-ace9-4269-ac75-36e0229b62b6%2Ficon.png?1533302754641" alt="" height="40   px" width="80px"></a>
+            </div>
+            <!-- <a href="/" class="item">Home</a>
+            <a href="/blogs/new" class="item">New Post</a>
+        </div>
+    </div> -->
